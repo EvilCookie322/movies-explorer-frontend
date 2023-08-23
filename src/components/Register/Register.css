@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 40px 0 0;
+	padding: 40px 0 232px;
 	max-width: 396px;
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -34,6 +34,7 @@
 		padding-top: 50px;
 		padding-left: 30px;
 		padding-right: 30px;
+		padding-bottom: 30px;
 	}
 
 	.register__title {

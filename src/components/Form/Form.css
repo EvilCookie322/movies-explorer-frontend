@@ -12,6 +12,10 @@
 	visibility: hidden;
 }
 
+.form__error_place_register {
+	visibility: visible;
+}
+
 .form__error_visible {
 	visibility: visible;
 }
