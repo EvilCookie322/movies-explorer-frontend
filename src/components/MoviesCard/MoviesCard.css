@@ -1,0 +1,133 @@
+.movie {
+	display: grid;
+	/* grid-template: auto calc(281px - 203px) / 306px 53px; */
+	grid-template: auto calc(281px - 203px) / auto 53px;
+	border-radius: 6px;
+	overflow: hidden;
+	background-color: rgba(34, 34, 34, 1);
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, .7);
+}
+
+.movie__image {
+	grid-column: span 2;
+	width: 364px;
+	height: 203px;
+	object-fit: cover;
+}
+
+.movie__info {
+	padding: 16px 0 16px 16px;
+	display: flex;
+	flex-direction: column;
+	grid-row: 2 / 3;
+	justify-content: space-between;
+}
+
+.movie__title {
+	margin: 0;
+	font-size: 13px;
+	line-height: calc(16 / 13);
+	font-weight: 500;
+	max-width: 282px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.movie__duration {
+	margin: 0;
+	font-size: 11px;
+	line-height: calc(13 / 11);
+	color: rgba(139, 139, 139, 1);
+}
+
+.movie__button {
+	margin: 0;
+	margin-top: 9px;
+	padding: 0;
+	border: none;
+	background: none;
+	transition: opacity 0.4s ease-in-out;
+	opacity: 1;
+	cursor: pointer;
+	display: inline-flex;
+	justify-self: center;
+}
+
+.movie__button:hover {
+	opacity: .7;
+}
+
+.movie__button_type_save {
+	width: 30px;
+	height: 30px;
+	background-image: url('../../images/save.svg');
+	background-repeat: no-repeat;
+}
+
+.movie__button_type_save_active {
+	background-image: url('../../images/save-active.svg');
+}
+
+.movie__button_type_delete {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	overflow: hidden;
+	background-image: url('../../images/delete.svg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: none;
+}
+
+.movie:hover .movie__button_type_delete {
+	display: block;
+}
+
+@media screen and (max-width: 992px) {
+	.movie {
+		grid-template-columns: auto 56px;
+		grid-template-rows: auto calc(262px - 190px);
+	}
+
+	.movie__image {
+		width: 339px;
+		height: 190px;
+	}
+
+	.movie__info {
+		padding-top: 14px;
+		padding-left: 14px;
+	}
+
+	.movie__title {
+		max-width: 261px;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.movie {
+		grid-template-columns: auto 50px;
+		grid-template-rows: auto calc(237px - 168px);
+	}
+
+	.movie__image {
+		width: 300px;
+		height: 168px;
+	}
+
+	.movie__title {
+		max-width: 236px;
+		font-size: 12px;
+		line-height: calc(15 / 12);
+	}
+
+	.movie__duration {
+		font-size: 10px;
+		line-height: calc(12 / 10);
+	}
+
+	.movie__button {
+		margin-top: 7px;
+	}
+}

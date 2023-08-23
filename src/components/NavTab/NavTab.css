@@ -1,0 +1,30 @@
+.page-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	gap: 40px;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(39, 39, 39, 1);
+	width: 100%;
+	height: 66px;
+}
+
+.page-nav__link {
+	font-size: 13px;
+	line-height: calc(16 / 13);
+	font-weight: 500;
+	color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 750px) {
+	.page-nav {
+		gap: 24px;
+	}
+
+	.page-nav__link {
+		font-size: 11px;
+		line-height: calc(16 / 11);
+	}
+}
