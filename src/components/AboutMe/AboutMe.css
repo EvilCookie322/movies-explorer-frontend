@@ -31,6 +31,8 @@
 	margin: 0;
 	font-size: 50px;
 	line-height: calc(58 / 50);
+	font-weight: 400;
+	letter-spacing: -1.94px;
 }
 
 .about-me__job {
@@ -98,16 +100,17 @@
 
 @media screen and (max-width: 750px) {
 	.about-me {
-		padding: 70px 14px;
-		justify-content: center;
-		grid-template-areas:
-			"title"
-			"image"
-			"resume";
-		grid-template-rows: repeat(3, auto);
-		grid-template-columns: 292px;
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.about-me {
+		padding-top: 70px;
+		padding-bottom: 70px;
 		row-gap: 40px;
-		column-gap: 0;
+		column-gap: 35px;
 	}
 
 	.about-me__title {
@@ -117,7 +120,6 @@
 	}
 
 	.about-me__image {
-		margin-top: 20px;
 		width: 292px;
 		height: 352px;
 	}
@@ -130,6 +132,27 @@
 	.about-me__job {
 		margin-top: 20px;
 		margin-bottom: 20px;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.about-me {
+		grid-template-areas:
+			"title"
+			"image"
+			"resume";
+		grid-template-rows: repeat(3, auto);
+		grid-template-columns: auto;
+		column-gap: 0;
+	}
+
+	.about-me__image {
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.about-me__job {
 		font-size: 11px;
 		line-height: calc(16 / 11);
 	}

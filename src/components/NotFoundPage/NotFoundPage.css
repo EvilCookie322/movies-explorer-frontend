@@ -12,6 +12,7 @@
 	margin: 0;
 	font-size: 140px;
 	line-height: calc(169 / 140);
+	font-weight: 400;
 }
 
 .not-found-page__error-text {

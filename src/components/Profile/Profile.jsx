@@ -1,11 +1,16 @@
 import Form from '../Form/Form';
 import './Profile.css';
 import Input from '../Input/Input';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
+	const navigation = useNavigate();
+	const handleLogout = () => {
+		navigation('/');
+	}
 	return (
 		<section className="profile">
-			<h2 className="profile__title">Привет, Александр!</h2>
+			<h2 className="profile__title">Привет, Виталий!</h2>
 			<Form
 				name="profile"
 				place="profile"
@@ -28,7 +33,7 @@ function Profile() {
 					placeholder="E-mail"
 				/>
 			</Form>
-			<button className="profile__button" type="button">Выйти из аккаунта</button>
+			<button className="profile__button" onClick={handleLogout} type="button">Выйти из аккаунта</button>
 		</section>
 	);
 }

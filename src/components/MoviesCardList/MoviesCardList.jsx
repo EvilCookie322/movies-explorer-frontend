@@ -16,7 +16,7 @@ function MoviesCardList(props) {
 			<button
 				type="button"
 				className={
-					`movie-card-list__button-more${(movies.length < 12) ? " movie-card-list__button-more_unvisible" : ""}`
+					`movies-card-list__button-more${(movies.length < 12) ? " movies-card-list__button-more_unvisible" : ""}`
 				}
 			>Ещё</button>
 		</section>

@@ -17,12 +17,14 @@ function Login() {
 					name="email"
 					place="sign"
 					label="E-mail"
+					placeholder="E-mail"
 				/>
 				<Input
 					type="password"
 					name="password"
 					place="sign"
 					label="Пароль"
+					placeholder="Пароль"
 				/>
 			</Form>
 			<p className="login__suggestion">

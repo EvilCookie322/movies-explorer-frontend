@@ -1,3 +1,4 @@
+import NavTab from '../NavTab/NavTab';
 import './Promo.css'
 
 function Promo() {
@@ -8,6 +9,7 @@ function Promo() {
 					Учебный проект студента факультета Веб-разработки.
 				</h1>
 			</div>
+			<NavTab />
 		</section>
 	);
 }

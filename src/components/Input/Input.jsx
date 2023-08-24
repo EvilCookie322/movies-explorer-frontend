@@ -5,7 +5,7 @@ function Input({ type, name, place, label, value, placeholder }) {
 		<div className={`input input_place_${place}`}>
 			<label
 				className={`input__label input__label_place_${place}`}
-				htmlFor={name}
+				htmlFor={`${place}_input_${name}`}
 			>
 				{label}
 			</label>
@@ -14,6 +14,9 @@ function Input({ type, name, place, label, value, placeholder }) {
 				type={type}
 				name={name}
 				value={value}
+				id={`${place}_input_${name}`}
+				minLength={type === 'password' || name === 'name' ? 2 : null}
+				maxLength={type === 'password' ? 16 : name === 'name' ? 30 : null}
 				placeholder={placeholder}
 				required
 			/>

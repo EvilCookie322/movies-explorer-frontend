@@ -18,11 +18,11 @@ function AboutProject() {
 					</p>
 				</div>
 				<div className="about-project__timeline">
-					<div className="about-project__timeline_part about-project__timeline_part_side_left">
+					<div className="about-project__timeline-part about-project__timeline-part_side_left">
 						<span className="about-project__span about-project__span_side_left">1 неделя</span>
 						<p className="about-project__trend">Back-end</p>
 					</div>
-					<div className="about-project__timeline_part about-project__timeline_part_side_right">
+					<div className="about-project__timeline-part about-project__timeline-part_side_right">
 						<span className="about-project__span about-project__span_side_right">4 недели</span>
 						<p className="about-project__trend">Front-end</p>
 					</div>

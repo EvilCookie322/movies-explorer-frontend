@@ -17,18 +17,21 @@ function Register() {
 					name="name"
 					place="sign"
 					label="Имя"
+					placeholder="Имя"
 				/>
 				<Input
 					type="email"
 					name="email"
 					place="sign"
 					label="E-mail"
+					placeholder="E-mail"
 				/>
 				<Input
 					type="password"
 					name="password"
 					place="sign"
 					label="Пароль"
+					placeholder="Пароль"
 				/>
 			</Form>
 			<p className="register__suggestion">

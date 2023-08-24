@@ -10,7 +10,7 @@ function MainMenu() {
 	}
 	return (
 		<>
-			<div className={`main-menu__overlay${isBurgerClicked ? " main-menu__overlay_visible" : ""}`}>
+			<div className={`main-menu-overlay${isBurgerClicked ? " main-menu-overlay_visible" : ""}`}>
 				<ul className={`main-menu${isBurgerClicked ? " main-menu_visible" : ""}`}>
 					<li className='main-menu__item'>
 						<NavLink

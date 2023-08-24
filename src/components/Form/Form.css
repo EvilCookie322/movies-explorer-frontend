@@ -12,14 +12,6 @@
 	visibility: hidden;
 }
 
-.form__error_place_register {
-	visibility: visible;
-}
-
-.form__error_visible {
-	visibility: visible;
-}
-
 .form__submit-button {
 	padding: 0;
 	border: none;
@@ -66,6 +58,10 @@
 
 .form__submit-button_place_register:hover {
 	background-color: rgba(66, 133, 244, .8);
+}
+
+.form:invalid:has(.input__input:invalid:not(:placeholder-shown)) .form__error {
+	visibility: visible;
 }
 
 @media screen and (max-width: 992px) {
