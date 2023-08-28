@@ -1,0 +1,38 @@
+.page {
+	background-color: rgba(32, 32, 32, 1);
+	font-family: 'Inter', Arial, sans-serif;
+	color: #fff;
+	text-rendering: optimizeLegibility;
+	font-kerning: normal;
+	font-weight: 400;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.page__container {
+	margin: 0 auto;
+	min-width: 320px;
+	max-width: 1280px;
+	height: 100vh;
+	display: grid;
+	grid-template: auto 1fr auto / auto;
+	grid-template-areas:
+		"header"
+		"content"
+		"footer";
+}
+
+.content {
+	grid-area: content;
+}
+
+.link {
+	transition: opacity .3s linear;
+}
+
+.link:hover {
+	opacity: .7;
+}
