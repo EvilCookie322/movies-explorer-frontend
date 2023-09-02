@@ -1,5 +1,5 @@
-export const MAIN_API_URL = 'http://localhost:4000';
-// export const MAIN_API_URL = 'https://api.alexg.students.nomoreparties.co';
+//export const MAIN_API_URL = 'http://localhost:4000';
+export const MAIN_API_URL = 'https://api.alexg.students.nomoreparties.co';
 export const MOVIES_API_URL = 'https://api.nomoreparties.co';
 
 export const MAX_WIDTH = 1279;
