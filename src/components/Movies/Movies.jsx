@@ -46,6 +46,7 @@ function Movies({
 
 	function filterMovies(movies, request, isChecked) {
 		const nameFilteredMovies = movies.filter(el => el.nameRU.toLowerCase().includes(request.toLowerCase()) || el.nameEN.toLowerCase().includes(request.toLowerCase()));
+		
 		return isChecked ?
 			nameFilteredMovies.filter(el => el.duration < 41)
 			:

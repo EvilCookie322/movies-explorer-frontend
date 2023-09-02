@@ -141,16 +141,18 @@ function App() {
 	function handleUpdateUser(user) {
 		setIsLoading(true);
 		setErrorMessage('');
-		MainApi.updateUserInformation(user)
+		return MainApi.updateUserInformation(user)
 			.then((user) => {
 				setCurrentUser({
 					name: user.name,
 					email: user.email,
 				});
+				return true;
 			})
 			.catch((error) => {
 				console.log(error);
 				setErrorMessage('Произошла ошибка при обновлении профиля');
+				return false;
 			})
 			.finally(() => {
 				setIsLoading(false);

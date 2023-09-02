@@ -1,7 +1,7 @@
 import Form from '../Form/Form';
 import './Profile.css';
 import Input from '../Input/Input';
-import { useContext, useEffect } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import useFormWithValidation from '../../utils/useFormWithValidation';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { EMAIL_REGEX, NAME_REGEX } from '../../utils/const';
@@ -9,6 +9,7 @@ import { EMAIL_REGEX, NAME_REGEX } from '../../utils/const';
 function Profile({ isLoading, onSubmit, onLogout, errorMessage }) {
 	const currentUser = useContext(CurrentUserContext);
 	const { values, setValues, handleChange, isValid } = useFormWithValidation();
+	const [success, setSuccess] = useState(false);
 
 	useEffect(() => {
 		setValues({
@@ -19,7 +20,12 @@ function Profile({ isLoading, onSubmit, onLogout, errorMessage }) {
 
 	function handleUpdateUser(e) {
 		e.preventDefault();
-		onSubmit(values);
+		onSubmit(values).then((res) => {
+			if (res) {
+				setTimeout(() => setSuccess(false), 2000)
+				setSuccess(true);
+			}
+		});
 	}
 
 	const isValuesNotSame = (values.name !== currentUser.name || values.email !== currentUser.email);
@@ -39,6 +45,7 @@ function Profile({ isLoading, onSubmit, onLogout, errorMessage }) {
 				isValid={!isLoading && isValid && isValuesNotSame}
 				errorMessage={errorMessage}
 			>
+				<span className={`profile__success${success ? ' profile__success_visible' : ''}`}>Успешно!</span>
 				<Input
 					type="text"
 					name="name"

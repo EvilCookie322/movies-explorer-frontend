@@ -10,9 +10,9 @@ function MoviesCardList({
 	onSaveMovie,
 	onDeleteMovie,
 	savedMovies,
-	errorMessage
+	errorMessage,
 }) {
-	const [movieList, setMovieList] = useState(movies);
+	const [movieList, setMovieList] = useState([]);
 	const [movieListParams, setMovieListParams] = useState({
 		movieNum: MAX_MOVIE_NUM,
 		addNum: MAX_ADD_NUM
@@ -41,6 +41,9 @@ function MoviesCardList({
 		}
 	}, [movies, movieListParams.movieNum])
 
+	const isNothingToShowMovies = !!localStorage.getItem('movies') && !movieList.length && !isPageSavedMovies;
+	const isNothingToShowSavedMovies = isPageSavedMovies && savedMovies.length && !movieList.length;
+
 	return (
 		<section className="movies-card-list">
 			<ul className="movies-card-list__list">
@@ -55,7 +58,18 @@ function MoviesCardList({
 						/>
 					))
 				}
-				<li className={`movies-card-list__empty${movies.length < 1 && !isPageSavedMovies? ' movies-card-list__empty_visible' : isPageSavedMovies && savedMovies.length !== movies.length ? ' movies-card-list__empty_visible' : ''}`}>
+				<li className=
+					{`movies-card-list__empty${
+						// !!movies.length && movieList.length < 1 && !isPageSavedMovies ?
+						errorMessage || isNothingToShowMovies ?
+						' movies-card-list__empty_visible'
+						:
+						// isPageSavedMovies && savedMovies.length !== movies.length ?
+						isNothingToShowSavedMovies ?
+						' movies-card-list__empty_visible'
+						:
+						''
+					}`}>
 					{errorMessage ?
 						'Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз'
 						:
