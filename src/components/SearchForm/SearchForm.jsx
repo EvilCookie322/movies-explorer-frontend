@@ -14,6 +14,9 @@ function SearchForm({
 	const { values, setValues, handleChange, isValid, setIsValid } = useFormWithValidation();
 
 	useEffect(() => {
+		setIsValid(true);
+	}, [])
+	useEffect(() => {
 		if (request) {
 			setValues({ search: request });
 			setIsValid(true);
@@ -22,7 +25,9 @@ function SearchForm({
 
 	function handleSearchSubmit(e) {
 		e.preventDefault();
-		onSubmit(values.search)
+		if (!!values.search)
+			onSubmit(values.search)
+		else setIsValid(false)
 	}
 
 	return (
@@ -40,7 +45,8 @@ function SearchForm({
 					className='search-form__input'
 					placeholder='Фильм'
 					value={values.search || ''}
-					required
+					// required
+					pattern='.*'
 				/>
 				<button
 					type='submit'
@@ -49,7 +55,7 @@ function SearchForm({
 				>
 					<img src={searchIcon} alt="Поиск" className="search-form__submit-button-image" />
 				</button>
-				<span className="search-form__error">Необходимов ввести ключевое слово</span>
+				<span className={`search-form__error${!isValid ? ' search-form__error_visible' : ''}`}>Необходимов ввести ключевое слово</span>
 				<div className="checkbox-container">
 					<input
 						type="checkbox"

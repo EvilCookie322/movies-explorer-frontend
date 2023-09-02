@@ -61,9 +61,13 @@
 	visibility: hidden;
 }
 
-.search-form__input:invalid:focus~.search-form__error {
+.search-form__error_visible {
 	visibility: visible;
 }
+
+/* .search-form__input:invalid:focus~.search-form__error {
+	visibility: visible;
+} */
 
 .checkbox-container {
 	display: flex;

@@ -4,13 +4,21 @@ import Input from '../Input/Input';
 import './Login.css';
 import useFormWithValidation from '../../utils/useFormWithValidation';
 import { EMAIL_REGEX } from '../../utils/const';
+import { useEffect } from 'react';
 
 function Login({
 	isLoading,
 	onSubmit,
-	errorMessage
+	errorMessage,
+	setErrorMessage
 }) {
 	const { values, handleChange, isValid } = useFormWithValidation();
+
+	useEffect(() => {
+		return () => {
+			setErrorMessage('');
+		}
+	}, [])
 
 	function handleLoginSubmit(e) {
 		e.preventDefault();

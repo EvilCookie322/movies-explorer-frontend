@@ -14,6 +14,13 @@ function useFormWithValidation() {
 		setIsValid(target.closest("form").checkValidity());
 	};
 
+	const handleChangeWithoutValidation = (event) => {
+		const target = event.target;
+		const name = target.name;
+		const value = target.value;
+		setValues({ ...values, [name]: value });
+	}
+
 	const resetForm = useCallback(
 		(newValues = {}, newErrors = {}, newIsValid = false) => {
 			setValues(newValues);
@@ -23,7 +30,7 @@ function useFormWithValidation() {
 		[setValues, setErrors, setIsValid]
 	);
 
-	return { values, setValues, handleChange, errors, isValid, setIsValid, resetForm };
+	return { values, setValues, handleChange, handleChangeWithoutValidation, errors, isValid, setIsValid, resetForm };
 }
 
 export default useFormWithValidation;

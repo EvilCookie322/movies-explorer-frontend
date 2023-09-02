@@ -225,6 +225,7 @@ function App() {
 										onSubmit={handleUpdateUser}
 										onLogout={handleLogout}
 										errorMessage={errorMessage}
+										setErrorMessage={setErrorMessage}
 									/>
 								</ProtectedRoute>
 							}
@@ -236,6 +237,7 @@ function App() {
 									isLoading={isLoading}
 									onSubmit={handleAuthorize}
 									errorMessage={errorMessage}
+									setErrorMessage={setErrorMessage}
 								/>
 							}
 						/>
