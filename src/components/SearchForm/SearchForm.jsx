@@ -46,7 +46,7 @@ function SearchForm({
 					placeholder='Фильм'
 					value={values.search || ''}
 					// required
-					pattern='.*'
+					// pattern='.*'
 				/>
 				<button
 					type='submit'
