@@ -8,8 +8,22 @@
 	color: rgba(238, 52, 101, 1);
 	font-size: 10px;
 	line-height: calc(12 / 10);
-	margin-top: 10px;
-	visibility: hidden;
+	/* margin-top: 10px; */
+	margin-bottom: 10px;
+	visibility: visible;
+	text-align: center;
+}
+
+.form__error_place_sign {
+	margin-top: 157px;
+}
+
+.form__error_place_register {
+	margin-top: 69px;
+}
+
+.form__error_place_profile {
+	margin-top: 187px;
 }
 
 .form__submit-button {
@@ -19,19 +33,23 @@
 	color: rgba(255, 255, 255, 1);
 }
 
+.form__submit-button:disabled {
+	opacity: .2;
+}
+
 .form__submit-button_place_profile {
-	margin-top: 187px;
+	/* margin-top: 187px; */
 	font-size: 13px;
 	line-height: calc(16 / 13);
 	transition: text-shadow .3s linear;
 }
 
-.form__submit-button_place_profile:hover {
+.form__submit-button_place_profile:not(:disabled):hover {
 	text-shadow: 0px 4px 5px rgba(255, 255, 255, .5);
 }
 
 .form__submit-button_place_sign {
-	margin-top: 157px;
+	/* margin-top: 157px; */
 	padding: 13px 0 15px;
 	border-radius: 3px;
 	text-align: center;
@@ -41,12 +59,12 @@
 	transition: background-color .3s linear;
 }
 
-.form__submit-button_place_sign:hover {
+.form__submit-button_place_sign:not(:disabled):hover {
 	background-color: rgba(66, 133, 244, .8);
 }
 
 .form__submit-button_place_register {
-	margin-top: 69px;
+	/* margin-top: 69px; */
 	padding: 13px 0 15px;
 	border-radius: 3px;
 	text-align: center;
@@ -56,16 +74,20 @@
 	transition: background-color .3s linear;
 }
 
-.form__submit-button_place_register:hover {
+.form__submit-button_place_register:not(:disabled):hover {
 	background-color: rgba(66, 133, 244, .8);
 }
 
-.form:invalid:has(.input__input:invalid:not(:placeholder-shown)) .form__error {
+/* .form:invalid:has(.input__input:invalid:not(:placeholder-shown)) .input__error {
 	visibility: visible;
-}
+} */
+
+/* .input__input:invalid:not(:placeholder-shown)~.input__error {
+	visibility: visible;
+} */
 
 @media screen and (max-width: 992px) {
-	.form__submit-button_place_profile {
+	.form__error_place_profile {
 		margin-top: 177px;
 	}
 }
@@ -74,11 +96,15 @@
 	.form__submit-button_place_profile {
 		font-size: 12px;
 		line-height: calc(15 / 12);
+		/* margin-top: 346px; */
+	}
+
+	.form__error_place_profile {
 		margin-top: 346px;
 	}
 
 	.form__submit-button_place_register {
-		margin-top: 157px;
+		/* margin-top: 157px; */
 		padding-top: 15px;
 		padding-bottom: 15px;
 		font-size: 12px;
@@ -86,10 +112,18 @@
 	}
 
 	.form__submit-button_place_sign {
-		margin-top: 245px;
+		/* margin-top: 245px; */
 		padding-top: 15px;
 		padding-bottom: 15px;
 		font-size: 12px;
 		line-height: calc(15 / 12);
+	}
+
+	.form__error_place_sign {
+		margin-top: 245px;
+	}
+
+	.form__error_place_register {
+		margin-top: 157px;
 	}
 }

@@ -3,7 +3,7 @@ import './Header.css'
 import logo from "../../images/logo.svg"
 import Navigation from '../Navigation/Navigation';
 
-function Header() {
+function Header({ loggedIn }) {
 	const location = useLocation();
 	const { pathname } = location;
 	return (
@@ -13,7 +13,7 @@ function Header() {
 					<Link to='/' className='header__logo'>
 						<img src={logo} alt='Лого'/>
 					</Link>
-					<Navigation isMainPage={true}/>
+					<Navigation isMainPage={!loggedIn}/>
 				</header>
 			)}
 			{(['/movies', '/saved-movies', '/profile'].includes(pathname)) && (
@@ -21,7 +21,7 @@ function Header() {
 					<Link to='/' className='header__logo'>
 						<img src={logo} alt='Лого'/>
 					</Link>
-					<Navigation isMainPage={false}/>
+					<Navigation isMainPage={!loggedIn}/>
 				</header>
 			)}
 			{(['/signup', '/signin'].includes(pathname)) && (

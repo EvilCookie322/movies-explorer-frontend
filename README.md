@@ -8,4 +8,4 @@ https://disk.yandex.ru/d/BBBJc18bbiiwZw
 
 ## Ссылки
 
-Репозиторий https://github.com/EvilCookie322/movies-explorer-api
+Репозиторий https://github.com/EvilCookie322/movies-explorer-frontend
