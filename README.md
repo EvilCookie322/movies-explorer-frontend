@@ -12,4 +12,7 @@ https://disk.yandex.ru/d/BBBJc18bbiiwZw
 
 Репозиторий https://github.com/EvilCookie322/movies-explorer-frontend
 
-Pullrequest https://github.com/EvilCookie322/movies-explorer-frontend/pull/2
+## Развертывание
+npm start
+Запускает приложение в режиме разработчика.
+Откройте http://localhost:3000 в браузере чтобы протестировать приложение.
