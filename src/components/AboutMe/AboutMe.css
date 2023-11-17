@@ -62,8 +62,9 @@
 .about-me__image {
 	grid-area: image;
 	width: 270px;
-	height: 327px;
+	height: 370px;
 	object-fit: cover;
+	object-position: -106px;
 	border-radius: 10px;
 	display: inline-flex;
 }

@@ -4,9 +4,9 @@ import photo from '../../images/me.jpg';
 function AboutMe() {
 	return (
 		<section className="about-me" id="about-me">
-			<h2 className="about-me__title"></h2>
+			<h2 className="about-me__title">Студент</h2>
 			<div className="about-me__resume">
-				<h3 className="about-me__name">`Александр`</h3>
+				<h3 className="about-me__name">Александр</h3>
 				<p className="about-me__job">Фронтенд-разработчик, 26 лет</p>
 				<p className="about-me__info">
 				Я живу в Домодедово, получил диплом по специальности "программная инженерия" в НИЯУ МИФИ. 
